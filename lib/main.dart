@@ -5,6 +5,8 @@ import 'package:estilizacao_componentes/themes/purple_theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import 'data/bank_http.dart';
+
 void main() {
   runApp(
     DevicePreview(
@@ -22,7 +24,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: purpleTheme,
-      home: BankInherited(child: const Home()),
+      home: BankInherited(
+        child: Home(
+          api: BankHttp().dolarToReal(),
+        ),
+      ),
       builder: DevicePreview.appBuilder,
     );
   }
