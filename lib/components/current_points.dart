@@ -34,8 +34,7 @@ class _AccountPointsState extends State<AccountPoints> {
             padding: const EdgeInsets.only(top: 8, bottom: 8),
             child: Container(
               height: 1,
-              decoration: BoxDecoration(
-                  border: Border.all(color: ThemeColors.division)),
+              decoration: BoxDecoration(border: Border.all(color: ThemeColors.division)),
             ),
           ),
           Padding(

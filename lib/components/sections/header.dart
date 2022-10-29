@@ -18,8 +18,7 @@ class _HeaderState extends State<Header> {
       },
       child: Container(
         decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(8), bottomRight: Radius.circular(8)),
+          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(8), bottomRight: Radius.circular(8)),
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -45,14 +44,7 @@ class _HeaderState extends State<Header> {
                       Text.rich(
                         TextSpan(
                           text: '\$',
-                          children: <TextSpan>[
-                            TextSpan(
-                                text: BankInherited.of(context)
-                                    .values
-                                    .available
-                                    .toString(),
-                                style: Theme.of(context).textTheme.bodyLarge)
-                          ],
+                          children: <TextSpan>[TextSpan(text: BankInherited.of(context).values.available.toString(), style: Theme.of(context).textTheme.bodyLarge)],
                         ),
                       ),
                       const Text('Available balance'),
@@ -63,11 +55,9 @@ class _HeaderState extends State<Header> {
                       builder: (context, snapshot) {
                         switch (snapshot.connectionState) {
                           case ConnectionState.none:
-                            return CircularProgressIndicator();
-                            break;
+                            return const CircularProgressIndicator();
                           case ConnectionState.waiting:
-                            return CircularProgressIndicator();
-                            break;
+                            return const CircularProgressIndicator();
                           case ConnectionState.active:
                             // TODO: Handle this case.
                             break;
@@ -78,21 +68,14 @@ class _HeaderState extends State<Header> {
                                 Text.rich(
                                   TextSpan(
                                     text: 'R\$',
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                          text: snapshot.data.toString(),
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .bodyLarge)
-                                    ],
+                                    children: <TextSpan>[TextSpan(text: snapshot.data.toString(), style: Theme.of(context).textTheme.bodyLarge)],
                                   ),
                                 ),
                                 const Text('Dolar to Real'),
                               ],
                             );
-                            break;
                         }
-                        return Text('Erro na API');
+                        return const Text('Erro na API');
                       }),
                 ],
               ),

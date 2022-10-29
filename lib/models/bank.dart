@@ -1,10 +1,8 @@
-
 class BankModel {
   double available = 0;
   double spent = 0;
   double earned = 0;
   double points = 0;
-
 
   void deposit(double money) {
     available += money;

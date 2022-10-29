@@ -1,7 +1,6 @@
 import 'package:estilizacao_componentes/themes/theme_colors.dart';
 import 'package:flutter/material.dart';
 
-
 ThemeData purpleTheme = ThemeData(
   primaryColor: ThemeColors.primary,
   colorScheme: ColorScheme.fromSwatch(
