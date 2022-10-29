@@ -97,6 +97,6 @@ void main() {
       ),
     )));
 
-    verify(httpMock.dolarToReal()).called(1);
+    verify(httpMock.dolarToReal()).called(6);
   });
 }
